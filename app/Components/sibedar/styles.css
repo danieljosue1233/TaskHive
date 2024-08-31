@@ -1,0 +1,20 @@
+.nav-link.active {
+    background-color: #f8f9fa;  
+    font-weight: 500; 
+    color: #495057;
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+.nav-link {
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+.nav-link:hover {
+    background-color: #e9ecef; 
+    color: #212529;
+}
+
+.tags-header {
+    opacity: 0.6;
+    padding-left: 1.5rem; 
+}

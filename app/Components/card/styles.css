@@ -1,0 +1,15 @@
+.btn-icon {
+    color: #607d8b;
+}
+
+.btn-icon:hover {
+    color: inherit; 
+}
+
+.btn-icon.trash:hover {
+    color: red; 
+}
+
+.btn-icon.star:hover {
+    color: #ffbb44;
+}
