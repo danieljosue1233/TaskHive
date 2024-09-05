@@ -12,12 +12,13 @@ type Inputs = {
 }
 
 const AddTaskModal: FC = () => {
-  const { register, handleSubmit, formState: { errors } } = useForm<Inputs>({ defaultValues:{title: "", 
-    description: ""},
+  const { register, handleSubmit, formState: { errors } } = useForm<Inputs>({ 
+    defaultValues:{title: "", description: ""},
     resolver: zodResolver(taskSchema),
   });
 
-  const onSubmit:SubmitHandler<Inputs> = (data) => {
+  const onSubmit:SubmitHandler<Inputs> = (data, event) => {
+    event?.preventDefault();
     console.log(data);
   };
 

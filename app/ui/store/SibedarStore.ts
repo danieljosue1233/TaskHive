@@ -1,4 +1,5 @@
-import {create} from 'zustand';
+import { create } from 'zustand';
+import { data } from '../../data';
 
 type Tag = {
     name: string;
@@ -14,11 +15,6 @@ type StoreState = {
 export const useStore = create<StoreState>((set) => ({
     activeTab: '',
     setActiveTab: (tab) => set({ activeTab: tab }),
-    tags: [
-        { name: 'Personal', colorClass: 'text-success' },
-        { name: 'Work', colorClass: 'text-warning' },
-        { name: 'Social', colorClass: 'text-primary' },
-        { name: 'Important', colorClass: 'text-danger' },
-    ],
+    tags: data,
 }));
 

@@ -1,17 +1,16 @@
-"use client"
+"use client";
 
 import { FC, useState } from "react";
+import { data }from '../../data'
 
 interface SelectedOption {
     option: string;
     colorClass: string;
 }
 
-
 interface TaskDropdownProps {
     onSelect?: (selectedOption: SelectedOption) => void;
 }
-
 
 const TaskDropdown: FC<TaskDropdownProps> = ({ onSelect }) => {
     const [selectedOption, setSelectedOption] = useState<SelectedOption | null>(null);
@@ -40,22 +39,16 @@ const TaskDropdown: FC<TaskDropdownProps> = ({ onSelect }) => {
                 )}
             </button>
             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-
-                <li role="button" className="dropdown-item d-flex align-items-center" onClick={() => handleSelect("Personal", "text-success")}>
-                    <i className="bi bi-dot text-success me-2 fs-3"></i>Personal
-                </li>
-
-                <li role="button" className="dropdown-item d-flex align-items-center" onClick={() => handleSelect("Work", "text-warning")}>
-                    <i className="bi bi-dot text-warning me-2 fs-3"></i>Work
-                </li>
-
-                <li role="button" className="dropdown-item d-flex align-items-center" onClick={() => handleSelect("Social", "text-primary")}>
-                    <i className="bi bi-dot text-primary me-2 fs-3"></i>Social
-                </li>
-
-                <li role="button" className="dropdown-item d-flex align-items-center" onClick={() => handleSelect("Important", "text-danger")}>
-                    <i className="bi bi-dot text-danger me-2 fs-3"></i>Important
-                </li>
+                {data.map((option) => (
+                    <li
+                        key={option.name}
+                        role="button"
+                        className="dropdown-item d-flex align-items-center"
+                        onClick={() => handleSelect(option.name, option.colorClass)}
+                    >
+                        <i className={`bi bi-dot ${option.colorClass} me-2 fs-3`}></i>{option.name}
+                    </li>
+                ))}
             </ul>
         </div>
     );
