@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import TaskDropdown from '../dropdown/TaskDropdown';
-import './styles.css';
 import { useStore } from '@/app/ui/store/TaskStore';
+import './styles.css';
 
 
 type TaskCardProps = {
