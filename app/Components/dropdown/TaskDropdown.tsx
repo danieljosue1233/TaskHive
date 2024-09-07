@@ -1,7 +1,8 @@
 "use client";
 
+
 import { FC, useState } from "react";
-import { data }from '../../data'
+import { tags } from "@/app/data";
 
 interface SelectedOption {
     option: string;
@@ -14,6 +15,7 @@ interface TaskDropdownProps {
 
 const TaskDropdown: FC<TaskDropdownProps> = ({ onSelect }) => {
     const [selectedOption, setSelectedOption] = useState<SelectedOption | null>(null);
+
 
     const handleSelect = (option: string, colorClass: string) => {
         const selected = { option, colorClass };
@@ -39,7 +41,7 @@ const TaskDropdown: FC<TaskDropdownProps> = ({ onSelect }) => {
                 )}
             </button>
             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                {data.map((option) => (
+                {tags.map((option) => (
                     <li
                         key={option.name}
                         role="button"

@@ -1,5 +1,5 @@
-import { create } from 'zustand';
-import { data } from '../../data';
+import {create} from 'zustand';
+import { tags } from '../../data'
 
 type Tag = {
     name: string;
@@ -15,6 +15,6 @@ type StoreState = {
 export const useStore = create<StoreState>((set) => ({
     activeTab: '',
     setActiveTab: (tab) => set({ activeTab: tab }),
-    tags: data,
+    tags: tags
 }));
 

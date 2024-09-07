@@ -5,6 +5,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { taskSchema } from "@/app/validations/TaskSchema";
 import './styles.css';
+import { useStore } from "@/app/ui/store/TaskStore";
 
 type Inputs = {
   title: string;
@@ -17,8 +18,16 @@ const AddTaskModal: FC = () => {
     resolver: zodResolver(taskSchema),
   });
 
+  const addTask = useStore((state) => state.addTask);
+
   const onSubmit:SubmitHandler<Inputs> = (data, event) => {
     event?.preventDefault();
+    const newTask = {
+      id: Date.now(),
+      title: data.title,
+      subtitle: new Date().toLocaleDateString(),
+      description: data.description,
+    }
     console.log(data);
   };
 

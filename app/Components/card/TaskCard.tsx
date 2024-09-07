@@ -3,14 +3,22 @@ import TaskDropdown from '../dropdown/TaskDropdown';
 import './styles.css';
 
 
-const TaskCard: FC = () => {
+type TaskCardProps = {
+    id: number;
+    title: string;
+    subtitle: string;
+    description: string;
+}
+
+
+const TaskCard: FC<TaskCardProps> = ({id, title, subtitle, description}) => {
 
     return (
         <div className="card" style={{ width: '18rem' }}>
             <div className="card-body">
-                <h5 className="card-title">Backup Files EOD</h5>
-                <h6 className="card-subtitle mb-2 text-muted">17 April</h6>
-                <p className="card-text">Maecenas condimentum neque mollis, egestas leo ut, gravida.</p>
+                <h5 className="card-title">{title}</h5>
+                <h6 className="card-subtitle mb-2 text-muted">{subtitle}</h6>
+                <p className="card-text">{description}</p>
                 <div className="d-flex gap-2  mt-3">
                     <button className="btn btn-link p-0 btn-icon star">
                         <i className="bi bi-star"></i>

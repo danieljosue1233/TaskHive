@@ -1,4 +1,4 @@
-export const data = [
+export const tags = [
     { "name": "Personal", "colorClass": "text-success" },
     { "name": "Work", "colorClass": "text-warning" },
     { "name": "Social", "colorClass": "text-primary" },
