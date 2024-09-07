@@ -1,3 +1,5 @@
+"use client"
+
 import { FC } from "react";
 import TaskCard from "../card/TaskCard";
 import './styles.css';

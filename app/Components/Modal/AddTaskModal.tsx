@@ -44,7 +44,7 @@ const AddTaskModal: FC = () => {
       </button>
 
       <div className="modal fade" id="addTaskModal" tabIndex={-1} aria-labelledby="addTaskModalLabel" aria-hidden="true">
-        <div className="modal-dialog modal-dialog-centered">
+        <div className="modal-dialog modal-dialog-centered custom-modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="addTaskModalLabel">Add Task</h5>
