@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import TaskDropdown from '../dropdown/TaskDropdown';
 import './styles.css';
+import { useStore } from '@/app/ui/store/TaskStore';
 
 
 type TaskCardProps = {
@@ -13,6 +14,8 @@ type TaskCardProps = {
 
 const TaskCard: FC<TaskCardProps> = ({id, title, subtitle, description}) => {
 
+    const removeTask = useStore((state) => state.removeTask);
+
     return (
         <div className="card" style={{ width: '18rem' }}>
             <div className="card-body">
@@ -23,7 +26,7 @@ const TaskCard: FC<TaskCardProps> = ({id, title, subtitle, description}) => {
                     <button className="btn btn-link p-0 btn-icon star">
                         <i className="bi bi-star"></i>
                     </button>
-                    <button className="btn btn-link p-0 btn-icon trash">
+                    <button className="btn btn-link p-0 btn-icon trash" onClick={() => removeTask(id)}>
                         <i className="bi bi-trash"></i>
                     </button>
 

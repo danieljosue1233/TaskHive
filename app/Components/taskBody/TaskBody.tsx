@@ -19,22 +19,11 @@ const TaskBody: FC = () => {
             </div>
 
             <div className="row gap-4 g-lg-0 gx-lg-3 flex-grow-1 justify-content-center">
-                <div className="col">
-                    <TaskCard />
-                </div>
-
-                <div className="col">
-                    <TaskCard />
-                </div>
-
-                <div className="col">
-                    <TaskCard />
-                </div>
-
-                <div className="col">
-                    <TaskCard />
-                </div>
-
+                {tasks.map((task)=> (
+                    <div className="col" key={task.id}>
+                        <TaskCard {...task} />
+                    </div>
+                ))}
             </div>
 
 

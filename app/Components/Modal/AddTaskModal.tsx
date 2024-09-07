@@ -27,7 +27,8 @@ const AddTaskModal: FC = () => {
       title: data.title,
       subtitle: new Date().toLocaleDateString(),
       description: data.description,
-    }
+    };
+    addTask(newTask);
     console.log(data);
   };
 
