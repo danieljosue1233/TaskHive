@@ -16,7 +16,7 @@ type StoreState = {
     toggleFavorite: (id: number) => void; 
 };
 
-export const useStore = create<StoreState>()(
+export const useTaskStore = create<StoreState>()(
     persist(
         (set) => ({
             tasks: [],
