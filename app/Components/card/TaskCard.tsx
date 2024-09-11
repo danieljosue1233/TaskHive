@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import TaskDropdown from '../dropdown/TaskDropdown';
-import { useStore } from '@/app/ui/store/TaskStore';
+import { useTaskStore } from '@/app/ui/store/TaskStore';
 import './styles.css';
 
 
@@ -10,13 +10,13 @@ type TaskCardProps = {
     subtitle: string;
     description: string;
     isFavorite: boolean;
+    tag?: string;
 }
-
 
 const TaskCard: FC<TaskCardProps> = ({id, title, subtitle, description, isFavorite}) => {
 
-    const removeTask = useStore((state) => state.removeTask);
-    const toggleFavorite = useStore((state) => state.toggleFavorite);
+    const removeTask = useTaskStore((state) => state.removeTask);
+    const toggleFavorite = useTaskStore((state) => state.toggleFavorite);
 
     return (
         <div className="card" style={{ width: '18rem' }}>

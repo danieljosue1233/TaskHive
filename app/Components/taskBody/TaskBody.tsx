@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
 import { FC } from "react";
 import TaskCard from "../card/TaskCard";
 import './styles.css';
-import { useStore } from "@/app/ui/store/TaskStore";
+import { useTaskStore } from "@/app/ui/store/TaskStore";
 
 const TaskBody: FC = () => {
 
-    const { tasks } = useStore();
+    const { tasks } = useTaskStore();
 
     return (
         <div className="flex flex-column align-items-center  min-vh-100 p-5" style={{ backgroundImage: "url('/assets/images/grid.jpg')", backgroundSize: 'cover' }}>
@@ -20,7 +20,7 @@ const TaskBody: FC = () => {
                 </p>
             </div>
 
-            <div className="row gap-4 g-lg-0 gx-lg-3 flex-grow-1 justify-content-center">
+            <div className="row gap-4 g-lg-0 gx-lg-3 flex-grow-1">
                 {tasks.map((task)=> (
                     <div className="col" key={task.id}>
                         <TaskCard {...task} />
