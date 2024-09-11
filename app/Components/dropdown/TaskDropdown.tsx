@@ -2,7 +2,7 @@
 
 
 import { FC, useState } from "react";
-import { tags } from "@/app/data";
+import {tags} from '../../data'
 
 interface SelectedOption {
     option: string;

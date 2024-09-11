@@ -3,11 +3,14 @@
 import Link from 'next/link';
 import React, { FC } from 'react';
 import AddTaskModal from '../Modal/AddTaskModal';
-import { useStore } from '@/app/ui/store/SibedarStore';
+import { sibedarStore } from '@/app/ui/store/Store';
 import './styles.css';
 
+   
 const Sidebar: FC = () => {
-    const { activeTab, setActiveTab, tags } = useStore();
+    const { activeTab, setActiveTab, tags } = sibedarStore();
+
+
 
     return (
         <div className="d-flex flex-column flex-shrink-0 p-3 bg-light" style={{ width: '280px', height: '100vh' }}>

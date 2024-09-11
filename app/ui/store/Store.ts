@@ -12,7 +12,7 @@ type StoreState = {
     tags: Tag[];
 };
 
-export const useStore = create<StoreState>((set) => ({
+export const sibedarStore = create<StoreState>((set) => ({
     activeTab: '',
     setActiveTab: (tab) => set({ activeTab: tab }),
     tags: tags
